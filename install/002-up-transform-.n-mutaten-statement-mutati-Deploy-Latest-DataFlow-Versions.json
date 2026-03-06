@@ -1,0 +1,175 @@
+{
+  "action": {
+    "up": {
+      "transform": "$.(\n  $mutate({\n    \"statement\": 'mutation ($payload:[DeployDataFlowVersionPayloadInput!]!){deployDataFlowVersion(payload:$payload){id}}',\n    \"variables\": {\"payload\":[{\"dataFlowVersionId\": id}]}\n  })\n)",
+      "bindings": {}
+    },
+    "down": {
+      "transform": "$",
+      "bindings": {}
+    }
+  },
+  "payload": [
+    {
+      "id": "cl81suf2n000601a6d85f2s77",
+      "dataFlowId": "adjustmentCodesFromPlexOdbc"
+    },
+    {
+      "id": "cl8al34lg004u011v4l01ah7e",
+      "dataFlowId": "approvedLogisticalUnitsFromPlexOdbcPartOperationApprovedContainer"
+    },
+    {
+      "id": "cl8bvmr2z03op016h5gytf9a6",
+      "dataFlowId": "approvedSuppliersFromPlexOdbc"
+    },
+    {
+      "id": "cl8ai84a0003j011ob13t9l8w",
+      "dataFlowId": "approvedWorkcentersFromPlexOdbc"
+    },
+    {
+      "id": "cl7z7hhj10028016jck6dczn7",
+      "dataFlowId": "contactsFromPlexOdbc"
+    },
+    {
+      "id": "cl8ysxxc9003k0188bpv01mnf",
+      "dataFlowId": "customerAddressesFromPlexOdbc"
+    },
+    {
+      "id": "cl8ai8ys1004p011yaplm4f35",
+      "dataFlowId": "customerProductsFromPlexOdbcCustomerParts"
+    },
+    {
+      "id": "cl80fxjkk002e014pgemu46dw",
+      "dataFlowId": "customersFromPlexOdbc"
+    },
+    {
+      "id": "cl8ahxo0u004r01z6ho8aeq62",
+      "dataFlowId": "customerStageFromPlexOdbc"
+    },
+    {
+      "id": "cl81upglf000d0170bx5ugt1s",
+      "dataFlowId": "eventsFromPlexOdbc"
+    },
+    {
+      "id": "cl8ak0yef003o011oh4e4gct3",
+      "dataFlowId": "facilitiesFromPlexOdbcBuildings"
+    },
+    {
+      "id": "cl8xaqgfl002z017x7l8y3jrb",
+      "dataFlowId": "inventoryStatusFromPlexOdbcContainerStatuses"
+    },
+    {
+      "id": "cl8ahtj83004h011v9d673aur",
+      "dataFlowId": "locationsFromPlexOdbc"
+    },
+    {
+      "id": "cl8bonwq100cw01z6c6nye4sa",
+      "dataFlowId": "locationStatusFromPlexOdbc"
+    },
+    {
+      "id": "cl8ahz8qu004l011y1rvk4pqv",
+      "dataFlowId": "locationTypeFromPlexOdbc"
+    },
+    {
+      "id": "cl8uolzuz003101884l4ob36q",
+      "dataFlowId": "logisticalUnitsFromPlexOdbcContainerTypes"
+    },
+    {
+      "id": "cl8uo3mx9002x0188b7gu5fh3",
+      "dataFlowId": "modeEventFromPlexOdbcWorkcenterEventStatus"
+    },
+    {
+      "id": "cl8uo1cam002j017x8tdyb1p9",
+      "dataFlowId": "modesFromPlexOdbcWorkcenterStatuses"
+    },
+    {
+      "id": "cl81smgt3000j015x1a6w5j5l",
+      "dataFlowId": "processesFromPlexOdbc"
+    },
+    {
+      "id": "cl8bpze450002017q6pith248",
+      "dataFlowId": "productCustomDataFromPlexOdbcPartAttributes"
+    },
+    {
+      "id": "cl8ai5yep003i011ohuyk7a15",
+      "dataFlowId": "productsFromPlexOdbcParts"
+    },
+    {
+      "id": "cl8ai4wid00440116fvxj4xay",
+      "dataFlowId": "productStagesFromPlexOdbc"
+    },
+    {
+      "id": "cl8btxar0000h0176gwbf1szt",
+      "dataFlowId": "productStrategiesFromPlexOdbc"
+    },
+    {
+      "id": "cl81yvqi9000j01a61a02779n",
+      "dataFlowId": "productStrategyProcessBomFromPlexOdbcBom"
+    },
+    {
+      "id": "cl8ai74w9004v01z632xk8ol1",
+      "dataFlowId": "productStrategyProcessesFromPlexOdbcPartOperations"
+    },
+    {
+      "id": "cl81xwju4000c014pe2fwhhdj",
+      "dataFlowId": "productStrategyProcessTypeFromPlexOdbcPartOperationsType"
+    },
+    {
+      "id": "cl81w8fl2000c01a6gfjy5cbp",
+      "dataFlowId": "productTypesFromPlexOdbc"
+    },
+    {
+      "id": "cl8akxeb8004x011y6uoh84qe",
+      "dataFlowId": "purchaseOrderLinesFromPlexOdbc"
+    },
+    {
+      "id": "cl8ajlg9c003m011o5e4xgypn",
+      "dataFlowId": "purchaseOrderLineStatusesFromPlexOdbc"
+    },
+    {
+      "id": "cl8aixd9w00460116efl583h0",
+      "dataFlowId": "purchaseOrdersFromPlexOdbc"
+    },
+    {
+      "id": "cl8aj73tp004v011y8mtz2vis",
+      "dataFlowId": "purchaseOrderStatusFromPlexOdbc"
+    },
+    {
+      "id": "cl8ajtekh003n011o7qvq22nl",
+      "dataFlowId": "purchaseOrderTypesFromPlexOdbc"
+    },
+    {
+      "id": "cl81wxq6e000e01a695899q54",
+      "dataFlowId": "qualityCodesFromPlexOdbcDefectType"
+    },
+    {
+      "id": "cl80onpr500010170enedej3h",
+      "dataFlowId": "scrapReasonsFromPlexOdbc"
+    },
+    {
+      "id": "cl8yse8f4003t016m42f41159",
+      "dataFlowId": "supplierAddressesFromPlexOdbc"
+    },
+    {
+      "id": "cl80imiuv001e015x5dgofor3",
+      "dataFlowId": "suppliersFromPlexOdbc"
+    },
+    {
+      "id": "cl81t6kzl000k015xh67fdptc",
+      "dataFlowId": "workcenterGroupFromPlexOdbc"
+    },
+    {
+      "id": "cl8tarady002r015k60102ks2",
+      "dataFlowId": "workcenterModesFromFuuzWorkcenterAndModes"
+    },
+    {
+      "id": "cl8tcedu8002t015k3x402dy4",
+      "dataFlowId": "workcentersFromPlexOdbc"
+    },
+    {
+      "id": "cl83b7pff002d016j12opb79h",
+      "dataFlowId": "workcenterTypesFromPlexOdbc"
+    }
+  ],
+  "description": "Deploy Latest DataFlow Versions"
+}

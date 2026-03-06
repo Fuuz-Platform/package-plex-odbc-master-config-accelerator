@@ -1,0 +1,1204 @@
+{
+  "action": {
+    "up": {
+      "transform": "(\n  $data :=  $~>| $ | {\n    \"connectionConfiguration\": {\n      \"pcn\": 0\n    },\n    \"active\": false\n  } |;\n\n  $mutate(\n    {\n      \"api\":$api,\n      \"statement\":'mutation($payload:[' & $type & 'CreatePayloadInput!]!){data:create' & $type & '(payload:$payload){id}}',\n      \"variables\":{\n        \"payload\":[\n          $data.{\n            \"create\":$\n          }\n        ]\n      }\n    }\n  ).data.id;\n)",
+      "bindings": {
+        "api": "application",
+        "type": "MasterDataFlowConfiguration"
+      }
+    },
+    "down": {
+      "transform": "$mutate({\"api\":$api,\"statement\":'mutation($payload:[' & $type & 'DeletePayloadInput!]!){delete' & $type & '(payload:$payload){id}}',\"variables\":{\"payload\":[$.{\"where\":{\"id\":id}}]}})",
+      "bindings": {
+        "api": "application",
+        "type": "MasterDataFlowConfiguration"
+      }
+    }
+  },
+  "payload": [
+    {
+      "id": "DEFAULT_PLEX_ODBC_CONFIG",
+      "active": true,
+      "dataFlowConfiguration": {
+        "flows": [
+          {
+            "dataFlow": {
+              "id": "facilitiesFromPlexOdbcBuildings",
+              "name": "Facilities from Plex ODBC Buildings",
+              "label": "Facilities from Plex ODBC Buildings"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "locationTypeFromPlexOdbc",
+              "name": "Location Type from Plex ODBC",
+              "label": "Location Type from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "locationStatusFromPlexOdbc",
+              "name": "Location Status from Plex ODBC",
+              "label": "Location Status from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "locationsFromPlexOdbc",
+              "name": "Locations from Plex ODBC",
+              "label": "Locations from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 2000
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "customerStageFromPlexOdbc",
+              "name": "Customer Stage from Plex ODBC",
+              "label": "Customer Stage from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "customersFromPlexOdbc",
+              "name": "Customers from Plex ODBC",
+              "label": "Customers from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "customerAddressesFromPlexOdbc",
+              "name": "Customer Addresses from Plex ODBC",
+              "label": "Customer Addresses from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "suppliersFromPlexOdbc",
+              "name": "Suppliers from Plex ODBC",
+              "label": "Suppliers from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "supplierAddressesFromPlexOdbc",
+              "name": "Supplier Addresses from Plex ODBC",
+              "label": "Supplier Addresses from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "contactsFromPlexOdbc",
+              "name": "Contacts From Plex ODBC",
+              "label": "Contacts From Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productStagesFromPlexOdbc",
+              "name": "Product Stages from Plex ODBC",
+              "label": "Product Stages from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productTypesFromPlexOdbc",
+              "name": "Product Types from Plex ODBC",
+              "label": "Product Types from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productsFromPlexOdbcParts",
+              "name": "Products from Plex ODBC Parts",
+              "label": "Products from Plex ODBC Parts"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productStrategiesFromPlexOdbc",
+              "name": "Product Strategies from Plex ODBC",
+              "label": "Product Strategies from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "processesFromPlexOdbc",
+              "name": "Processes from Plex ODBC",
+              "label": "Processes from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productStrategyProcessTypeFromPlexOdbcPartOperationsType",
+              "name": "Product Strategy Process Type from Plex ODBC Part Operations Type",
+              "label": "Product Strategy Process Type from Plex ODBC Part Operations Type"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productStrategyProcessesFromPlexOdbcPartOperations",
+              "name": "Product Strategy Processes from Plex ODBC Part Operations",
+              "label": "Product Strategy Processes from Plex ODBC Part Operations"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "customerProductsFromPlexOdbcCustomerParts",
+              "name": "Customer Products from Plex ODBC Customer Parts",
+              "label": "Customer Products from Plex ODBC Customer Parts"
+            },
+            "pagination": {
+              "defaultRowLimit": 2000
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "workcenterTypesFromPlexOdbc",
+              "name": "Workcenter Types from Plex ODBC",
+              "label": "Workcenter Types from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "workcenterGroupFromPlexOdbc",
+              "name": "Workcenter Group from Plex ODBC",
+              "label": "Workcenter Group from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "workcentersFromPlexOdbc",
+              "name": "Workcenters from Plex ODBC",
+              "label": "Workcenters from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "logisticalUnitsFromPlexOdbcContainerTypes",
+              "name": "Logistical Units from Plex ODBC Container Types",
+              "label": "Logistical Units from Plex ODBC Container Types"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "approvedLogisticalUnitsFromPlexOdbcPartOperationApprovedContainer",
+              "name": "Approved Logistical Units from Plex ODBC Part Operation Approved Container",
+              "label": "Approved Logistical Units from Plex ODBC Part Operation Approved Container"
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ],
+            "pagination": {
+              "defaultRowLimit": 2000
+            }
+          },
+          {
+            "dataFlow": {
+              "id": "approvedSuppliersFromPlexOdbc",
+              "name": "Approved Suppliers from Plex ODBC",
+              "label": "Approved Suppliers from Plex ODBC"
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ],
+            "pagination": {
+              "defaultRowLimit": 2000
+            }
+          },
+          {
+            "dataFlow": {
+              "id": "approvedWorkcentersFromPlexOdbc",
+              "name": "Approved Workcenters from Plex ODBC",
+              "label": "Approved Workcenters from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 2000
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productStrategyProcessBomFromPlexOdbcBom",
+              "name": "Product Strategy Process BOM from Plex ODBC BOM",
+              "label": "Product Strategy Process BOM from Plex ODBC BOM"
+            },
+            "pagination": {
+              "defaultRowLimit": 2000
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "eventsFromPlexOdbc",
+              "name": "Events from Plex ODBC",
+              "label": "Events from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "modesFromPlexOdbcWorkcenterStatuses",
+              "name": "Modes from Plex ODBC Workcenter Statuses",
+              "label": "Modes from Plex ODBC Workcenter Statuses"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "workcenterModesFromFuuzWorkcenterAndModes",
+              "label": "Workcenter Modes from Fuuz Workcenter and Modes",
+              "name": "Workcenter Modes from Fuuz Workcenter and Modes"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "scrapReasonsFromPlexOdbc",
+              "name": "Scrap Reasons from Plex ODBC",
+              "label": "Scrap Reasons from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "purchaseOrderStatusFromPlexOdbc",
+              "name": "Purchase Order Status from Plex ODBC",
+              "label": "Purchase Order Status from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "purchaseOrderTypesFromPlexOdbc",
+              "name": "Purchase Order Types from Plex ODBC",
+              "label": "Purchase Order Types from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "purchaseOrderLineStatusesFromPlexOdbc",
+              "name": "Purchase Order Line Statuses from Plex ODBC",
+              "label": "Purchase Order Line Statuses from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "purchaseOrdersFromPlexOdbc",
+              "name": "Purchase Orders from Plex ODBC",
+              "label": "Purchase Orders from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 1500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "purchaseOrderLinesFromPlexOdbc",
+              "name": "Purchase Order Lines from Plex ODBC",
+              "label": "Purchase Order Lines from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 1500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "qualityCodesFromPlexOdbcDefectType",
+              "name": "Quality Codes From Plex ODBC Defect Type",
+              "label": "Quality Codes From Plex ODBC Defect Type"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "adjustmentCodesFromPlexOdbc",
+              "name": "Adjustment Codes from Plex ODBC",
+              "label": "Adjustment Codes from Plex ODBC"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "modeEventFromPlexOdbcWorkcenterEventStatus",
+              "label": "ModeEvent from Plex ODBC WorkcenterEventStatus",
+              "name": "ModeEvent from Plex ODBC WorkcenterEventStatus"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "productCustomDataFromPlexOdbcPartAttributes",
+              "name": "Product Custom Data from Plex ODBC Part Attributes",
+              "label": "Product Custom Data from Plex ODBC Part Attributes"
+            },
+            "pagination": {
+              "defaultRowLimit": 100
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          },
+          {
+            "dataFlow": {
+              "id": "inventoryStatusFromPlexOdbcContainerStatuses",
+              "label": "Inventory Status from Plex ODBC Container Statuses",
+              "name": "Inventory Status from Plex ODBC Container Statuses"
+            },
+            "pagination": {
+              "defaultRowLimit": 500
+            },
+            "active": true,
+            "filters": [
+              {
+                "modifiedAfter": {
+                  "data": {
+                    "unit": "week",
+                    "offset": -1,
+                    "range": 1,
+                    "base": "startOf"
+                  },
+                  "label": "Previous week"
+                },
+                "modifiedBefore": null
+              }
+            ]
+          }
+        ]
+      },
+      "topicPrefix": "plex.odbc.import",
+      "connectionConfiguration": {
+        "pcn": 0
+      },
+      "connectionConfigurationSchema": {
+        "type": "object",
+        "properties": {
+          "pcn": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "pcn"
+        ],
+        "additionalProperties": false
+      },
+      "dataFlowConfigurationSchema": {
+        "type": "object",
+        "properties": {
+          "flows": {
+            "type": "array",
+            "inputProps": {
+              "initialCollapsed": true,
+              "defaultGroupValue": {
+                "dataFlow": null,
+                "pagination": {
+                  "defaultRowLimit": 500
+                },
+                "active": false,
+                "filters": [
+                  {
+                    "modifiedAfter": null,
+                    "modifiedBefore": null
+                  }
+                ]
+              },
+              "groupLabelDataPath": "dataFlow.name"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "dataFlow": {
+                  "type": "object",
+                  "inputProps": {
+                    "type": "combobox",
+                    "name": "dataFlow",
+                    "description": "The data flow this record was logged from.",
+                    "label": "Data Flow",
+                    "dataPath": "dataFlow",
+                    "stateTracking": "full",
+                    "labelField": "name",
+                    "labelPath": "name",
+                    "multiselect": false,
+                    "api": "Application",
+                    "queryType": "DataFlow"
+                  }
+                },
+                "pagination": {
+                  "type": "object",
+                  "label": "Pagination",
+                  "properties": {
+                    "defaultRowLimit": {
+                      "type": "integer",
+                      "inputProps": {
+                        "validation": {
+                          "required": true
+                        },
+                        "name": "defaultRowLimit",
+                        "label": "Default Row Limit",
+                        "type": "combobox",
+                        "options": [
+                          {
+                            "id": 100,
+                            "label": "100 Records Per Loop"
+                          },
+                          {
+                            "id": 250,
+                            "label": "250 Records Per Loop"
+                          },
+                          {
+                            "id": 500,
+                            "label": "500 Records Per Loop"
+                          },
+                          {
+                            "id": 750,
+                            "label": "750 Records Per Loop"
+                          },
+                          {
+                            "id": 1000,
+                            "label": "1000 Records Per Loop"
+                          },
+                          {
+                            "id": 1250,
+                            "label": "1250 Records Per Loop"
+                          },
+                          {
+                            "id": 1500,
+                            "label": "1500 Records Per Loop"
+                          },
+                          {
+                            "id": 1750,
+                            "label": "1750 Records Per Loop"
+                          },
+                          {
+                            "id": 2000,
+                            "label": "2000 Records Per Loop"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "filters": {
+                  "type": "array",
+                  "maxItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "modifiedAfter": {
+                        "type": "object",
+                        "inputProps": {
+                          "name": "modifiedAfter",
+                          "type": "datetimeRange",
+                          "label": "Modified After",
+                          "includePrevious": true,
+                          "includeCurrent": false,
+                          "includeNext": false
+                        }
+                      },
+                      "modifiedBefore": {
+                        "type": "object",
+                        "inputProps": {
+                          "name": "modifiedBefore",
+                          "type": "datetimeRange",
+                          "label": "Modified Before",
+                          "includeNext": true,
+                          "includeCurrent": true,
+                          "includePrevious": true
+                        }
+                      }
+                    },
+                    "required": [
+                      "modifiedAfter"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "active": {
+                  "type": "boolean",
+                  "inputProps": {
+                    "label": "Active",
+                    "name": "active",
+                    "validation": {
+                      "required": true
+                    }
+                  }
+                }
+              },
+              "required": [
+                "dataFlow",
+                "active",
+                "pagination",
+                "filters"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "flows"
+        ]
+      },
+      "description": "- Master Data Flow Parameters\n    - masterDataFlowConfigId\n        - Type: String\n        - Description: The ID of the Master Data Flow Configuration record you want to run\n    - dataFlowToRun\n        - Type: String\n        - Description: The Data Flow Id of the flow you want to run. By default the Master Data flow will start at that flow and continue through the remaining flows\n    - stopAfterImport\n        - Type: Boolean\n        - Description: When this value is true, it will only run the first flow in the sort or if you provide the dataFlowToRun parameter along with it, that flow will be the only flow ran.\n    - ignoreModifiedAfter\n        - Type: Boolean\n        - Description: When this value is set the modifiedAfter filter will be ignored and defaulted to January 1st of 1970. This should be use only once for the initial seeding of data. From then on the modifiedAfter should be used to limit results to what has changed.\n- Scheduling Flows\n    - You should **NEVER** put schedules inside the Master Data Flow itself.\n        - Schedules to run the master data import **MUST** be a separate data flow that calls the Master Data Flow with a masterDataFlowConfigurationId as a parameter through an Execute Flow Node\n        - If you need to call a specific flow on some frequency you can pass an explicit Data flow in the request as well as Stop After First Import as a parameter\n            - Ex: {  \"masterDataFlowConfigId\": \"DEFAULT_PLEX_ODBC_CONFIG\",  \"stopAfterImport\": true,  \"dataFlowToRun\": \"contactsFromPlexOdbc\" }\n        - In your initial seeding of data you will want to provide the 'ignoreModifiedAfter' parameter to ensure you retrieve all the data.\n            - Ex:  {  \"masterDataFlowConfigId\": \"DEFAULT_PLEX_ODBC_CONFIG\",  \"ignoreModifiedAfter\": true}\n- Topics\n    - **DO NOT EDIT THE TOPIC PREFIX ONCE YOU HAVE A WORKING SOLUTION.**\n        - The process will **not** automatically update all flows that receive on these topics.\n    - The topic that requests the flow to start must be in the format ${topicPrefix}.import.${flowId} for the flow to receive requests.\n    - The topic that paginates the flow must be in the format ${topicPrefix}.import.{$flowId}.paginate.\n    - These can be generated from the details form.\n        - The action button will call a flow that uses your existing Data Flow Configuration to generate topics in the above format.\n- Configurating existing flows\n    - The flows will run in the order provided in the configuration on the left. If you don't let dependencies run prior you will receive errors for foreign keys not yet existing. Be mindful of this when editing the configuration.\n    - By disabling flows from within the configuration it will not inactivate the Data Flow but instead filter it out from the runtime once the process is started\n- Configuring new flows\n    - Add a new record at the top right of the Data Flow Configuration Section\n    - Specify the data flow you would like to add to the import\n    - Specify the Row limit for pagination\n    - Add any filters you support within the flow\n    - Make sure the flow runs after its dependencies. To do so, the flow just needs to appear after it in the list to the left.\n- Custom Flows\n    - All flows for types that have pagination available MUST support pagination\n    - Row limits MUST be set by the configuration or if not fallback to a default of 500\n    - Must have a filter node that verifies the requested flow is the same as the current flows id.\n- Data Flow/Connection Configuration Schema\n    - Changes are allowed to these schemas, it will allow for more inputs to be added when writing custom configurations with new functionality.\n        - However, you must NEVER remove fields that are currently set in the schema.\n        - There are defaults in the JSON Schema of the Master Data Flow Configuration Model that ensure you adhere to the standards. However it will allow you to create additional inputs if you desire them.",
+      "note": "---------------------------- Here you can write notes on your implementation ----------------------------"
+    }
+  ],
+  "description": "Insert MasterDataFlowConfiguration Data"
+}

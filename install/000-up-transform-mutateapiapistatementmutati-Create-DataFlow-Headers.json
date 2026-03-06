@@ -1,0 +1,261 @@
+{
+  "action": {
+    "up": {
+      "transform": "$mutate({\"api\":$api,\"statement\":'mutation($payload:[' & $type & 'CreatePayloadInput!]!){data:create' & $type & '(payload:$payload){id}}',\"variables\":{\"payload\":[$.{\"create\":$}]}}).data.id",
+      "bindings": {
+        "api": "application",
+        "type": "DataFlow"
+      }
+    },
+    "down": {
+      "transform": "$mutate({\"api\":$api,\"statement\":'mutation($payload:[' & $type & 'DeletePayloadInput!]!){delete' & $type & '(payload:$payload){id}}',\"variables\":{\"payload\":[$.{\"where\":{\"id\":id}}]}})",
+      "bindings": {
+        "api": "application",
+        "type": "DataFlow"
+      }
+    }
+  },
+  "payload": [
+    {
+      "id": "adjustmentCodesFromPlexOdbc",
+      "name": "Adjustment Codes from Plex ODBC",
+      "description": "#38 - Import Adjustment Codes from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "approvedLogisticalUnitsFromPlexOdbcPartOperationApprovedContainer",
+      "name": "Approved Logistical Units from Plex ODBC Part Operation Approved Container",
+      "description": "#23 - Import Approved Logistical Units from Plex Part Operation Approved Container using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "approvedSuppliersFromPlexOdbc",
+      "name": "Approved Suppliers from Plex ODBC",
+      "description": "#24 - Import Approved Suppliers using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "approvedWorkcentersFromPlexOdbc",
+      "name": "Approved Workcenters from Plex ODBC",
+      "description": "#25 - Import Approved Workcenters using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "contactsFromPlexOdbc",
+      "name": "Contacts From Plex ODBC",
+      "description": "#10 - Import Contacts from Plex Contacts (Supplier/Customer) using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "customerAddressesFromPlexOdbc",
+      "name": "Customer Addresses from Plex ODBC",
+      "description": "#07 - Import Customer Addresses using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "customerProductsFromPlexOdbcCustomerParts",
+      "name": "Customer Products from Plex ODBC Customer Parts",
+      "description": "#18 - Import Customer Products from Plex Customer Parts using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "customersFromPlexOdbc",
+      "name": "Customers from Plex ODBC",
+      "description": "#06 - Import Customers from Plex using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "customerStageFromPlexOdbc",
+      "name": "Customer Stage from Plex ODBC",
+      "description": "#05 - Import Customer Stage using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "eventsFromPlexOdbc",
+      "name": "Events from Plex ODBC",
+      "description": "#27 - Import Events using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "facilitiesFromPlexOdbcBuildings",
+      "name": "Facilities from Plex ODBC Buildings",
+      "description": "#01 - Import Facilities from Plex Buildings using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "inventoryStatusFromPlexOdbcContainerStatuses",
+      "name": "Inventory Status from Plex ODBC Container Statuses",
+      "description": "#40 - Import Container Statuses from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "locationsFromPlexOdbc",
+      "name": "Locations from Plex ODBC",
+      "description": "#04 - Import Locations from Plex using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "locationStatusFromPlexOdbc",
+      "name": "Location Status from Plex ODBC",
+      "description": "#03 - Import Location Status using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "locationTypeFromPlexOdbc",
+      "name": "Location Type from Plex ODBC",
+      "description": "#02 - Import Location Type using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "logisticalUnitsFromPlexOdbcContainerTypes",
+      "name": "Logistical Units from Plex ODBC Container Types",
+      "description": "#22 - Import Logistical Units from Plex Container Types using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "modeEventFromPlexOdbcWorkcenterEventStatus",
+      "name": "ModeEvent from Plex ODBC WorkcenterEventStatus",
+      "description": "#29 - Import Events from Workcenter Event Status using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "modesFromPlexOdbcWorkcenterStatuses",
+      "name": "Modes from Plex ODBC Workcenter Statuses",
+      "description": "#28 - Import Modes from Plex Workcenter Statuses using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "processesFromPlexOdbc",
+      "name": "Processes from Plex ODBC",
+      "description": "#15 - Import Processes using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productCustomDataFromPlexOdbcPartAttributes",
+      "name": "Product Custom Data from Plex ODBC Part Attributes",
+      "description": "#39 - Import Product Custom Data from Plex Part Attributes using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productsFromPlexOdbcParts",
+      "name": "Products from Plex ODBC Parts",
+      "description": "#13 - Import Products from Plex Parts using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productStagesFromPlexOdbc",
+      "name": "Product Stages from Plex ODBC",
+      "description": "#11 - Import Product Stages from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productStrategiesFromPlexOdbc",
+      "name": "Product Strategies from Plex ODBC",
+      "description": "#14 - Import Product Strategies from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productStrategyProcessBomFromPlexOdbcBom",
+      "name": "Product Strategy Process BOM from Plex ODBC BOM",
+      "description": "#26 - Import Product Strategy Process BOM from Plex ODBC BOM",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productStrategyProcessesFromPlexOdbcPartOperations",
+      "name": "Product Strategy Processes from Plex ODBC Part Operations",
+      "description": "#17 - Import Product Strategy Processes from Plex Part Operations using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productStrategyProcessTypeFromPlexOdbcPartOperationsType",
+      "name": "Product Strategy Process Type from Plex ODBC Part Operations Type",
+      "description": "#16 - Import Product Strategy Process Type from Plex ODBC Part Operations Type",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "productTypesFromPlexOdbc",
+      "name": "Product Types from Plex ODBC",
+      "description": "#12 - Import Product Types from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "purchaseOrderLinesFromPlexOdbc",
+      "name": "Purchase Order Lines from Plex ODBC",
+      "description": "#36 - Import Purchase Order Lines from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "purchaseOrderLineStatusesFromPlexOdbc",
+      "name": "Purchase Order Line Statuses from Plex ODBC",
+      "description": "#34 - Import Purchase Order Line Statuses from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "purchaseOrdersFromPlexOdbc",
+      "name": "Purchase Orders from Plex ODBC",
+      "description": "#35 - Import Purchase Orders using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "purchaseOrderStatusFromPlexOdbc",
+      "name": "Purchase Order Status from Plex ODBC",
+      "description": "#32 - Import Purchase Orders Statuses using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "purchaseOrderTypesFromPlexOdbc",
+      "name": "Purchase Order Types from Plex ODBC",
+      "description": "#33 - Import Purchase Orders Types using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "qualityCodesFromPlexOdbcDefectType",
+      "name": "Quality Codes From Plex ODBC Defect Type",
+      "description": "#37 - Import Quality Codes From Plex ODBC Defect Type",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "scrapReasonsFromPlexOdbc",
+      "name": "Scrap Reasons from Plex ODBC",
+      "description": "#31 - Import Scrap Reasons from Plex using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "supplierAddressesFromPlexOdbc",
+      "name": "Supplier Addresses from Plex ODBC",
+      "description": "#09 - Import Supplier Addresses using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "suppliersFromPlexOdbc",
+      "name": "Suppliers from Plex ODBC",
+      "description": "#08 - Import Suppliers from Plex using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "workcenterGroupFromPlexOdbc",
+      "name": "Workcenter Group from Plex ODBC",
+      "description": "#20 - Import Workcenter Group using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "workcenterModesFromFuuzWorkcenterAndModes",
+      "name": "Workcenter Modes from Fuuz Workcenter and Modes",
+      "description": "#30 - Import Workcenter Modes based on Fuuz Workcenters and Modes",
+      "dataFlowTypeId": "System"
+    },
+    {
+      "id": "workcentersFromPlexOdbc",
+      "name": "Workcenters from Plex ODBC",
+      "description": "#21 - Import Workcenters from Plex using ODBC",
+      "dataFlowTypeId": "Integration"
+    },
+    {
+      "id": "workcenterTypesFromPlexOdbc",
+      "name": "Workcenter Types from Plex ODBC",
+      "description": "#19 - Import Workcenter Types from Plex ODBC",
+      "dataFlowTypeId": "Integration"
+    }
+  ],
+  "description": "Create DataFlow Headers"
+}

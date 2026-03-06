@@ -1,0 +1,501 @@
+{
+  "action": {
+    "up": {
+      "transform": "$mutate({\"api\":$api,\"statement\":'mutation($payload:[' & $type & 'CreatePayloadInput!]!){data:create' & $type & '(payload:$payload){id}}',\"variables\":{\"payload\":[$.{\"create\":$}]}}).data.id",
+      "bindings": {
+        "api": "application",
+        "type": "Topic"
+      }
+    },
+    "down": {
+      "transform": "$mutate({\"api\":$api,\"statement\":'mutation($payload:[' & $type & 'DeletePayloadInput!]!){delete' & $type & '(payload:$payload){id}}',\"variables\":{\"payload\":[$.{\"where\":{\"id\":id}}]}})",
+      "bindings": {
+        "api": "application",
+        "type": "Topic"
+      }
+    }
+  },
+  "payload": [
+    {
+      "id": "cl7gkxgav0001015855fl9vjd",
+      "name": "plex.odbc.import.customersFromPlexOdbc",
+      "description": "Topic used for the Customers import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgbz000201588mosdztt",
+      "name": "plex.odbc.import.facilitiesFromPlexOdbcBuildings",
+      "description": "Topic used for the Facilities import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgc400030158h9czcyn5",
+      "name": "plex.odbc.import.productsFromPlexOdbcParts",
+      "description": "Topic used for the Products import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgc900040158cxzua5dd",
+      "name": "plex.odbc.import.productStrategyProcessesFromPlexOdbcPartOperations",
+      "description": "Topic used for the ProductStrategyProcesses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgce000501586hgm00yo",
+      "name": "plex.odbc.import.productCustomDataFromPlexOdbcPartAttributes",
+      "description": "Topic used for the ProductCustomData import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgck00060158cwflfzz2",
+      "name": "plex.odbc.import.suppliersFromPlexOdbc",
+      "description": "Topic used for the Suppliers import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgcp000701580g4l3mzb",
+      "name": "plex.odbc.import.approvedLogisticalUnitsFromPlexOdbcPartOperationApprovedContainer",
+      "description": "Topic used for the ApprovedLogisticalUnits import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgcu000801585z0iajqs",
+      "name": "plex.odbc.import.contactsFromPlexOdbc",
+      "description": "Topic used for the Contacts import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgd000090158bzgw66hg",
+      "name": "plex.odbc.import.customerProductsFromPlexOdbcCustomerParts",
+      "description": "Topic used for the CustomerProducts import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgd8000a0158gw512vc7",
+      "name": "plex.odbc.import.locationsFromPlexOdbc",
+      "description": "Topic used for the Locations import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgdi000b01586kixcj6s",
+      "name": "plex.odbc.import.logisticalUnitsFromPlexOdbcContainerTypes",
+      "description": "Topic used for the LogisticalUnits import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgdv000c0158fv7khh5h",
+      "name": "plex.odbc.import.workcentersFromPlexOdbc",
+      "description": "Topic used for the Workcenters import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxge0000d0158duy30r2u",
+      "name": "plex.odbc.import.modesFromPlexOdbcWorkcenterStatuses",
+      "description": "Topic used for the Modes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxge5000e01588zng77yn",
+      "name": "plex.odbc.import.scrapReasonsFromPlexOdbc",
+      "description": "Topic used for the ScrapReasons import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgeg000f0158hf5k3jpc",
+      "name": "plex.odbc.import.approvedSuppliersFromPlexOdbc",
+      "description": "Topic used for the ApprovedSuppliers import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgen000g0158hhgeb10j",
+      "name": "plex.odbc.import.approvedWorkcentersFromPlexOdbc",
+      "description": "Topic used for the ApprovedWorkcenters import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxget000h015874xmblsr",
+      "name": "plex.odbc.import.eventsFromPlexOdbc",
+      "description": "Topic used for the Events import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgf0000i01586pnh6dji",
+      "name": "plex.odbc.import.supplierAddressesFromPlexOdbc",
+      "description": "Topic used for the SupplierAddresses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgfd000j0158afy2gbxn",
+      "name": "plex.odbc.import.workcenterGroupFromPlexOdbc",
+      "description": "Topic used for the WorkcenterGroup import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgfj000k0158hz5t5008",
+      "name": "plex.odbc.import.customerStageFromPlexOdbc",
+      "description": "Topic used for the CustomerStage import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgg1000l0158f9mu6w54",
+      "name": "plex.odbc.import.locationStatusFromPlexOdbc",
+      "description": "Topic used for the LocationStatus import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxggj000m01588pfs0nxu",
+      "name": "plex.odbc.import.locationTypeFromPlexOdbc",
+      "description": "Topic used for the LocationType import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxggo000n0158hpm2h96c",
+      "name": "plex.odbc.import.customerAddressesFromPlexOdbc",
+      "description": "Topic used for the CustomerAddresses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxggt000o01582rye3c8x",
+      "name": "plex.odbc.import.processesFromPlexOdbc",
+      "description": "Topic used for the Processes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxggx000p0158fu4x5etv",
+      "name": "plex.odbc.import.purchaseOrdersFromPlexOdbc",
+      "description": "Topic used for the PurchaseOrders import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgh2000q01587kcvg97r",
+      "name": "plex.odbc.import.purchaseOrderStatusFromPlexOdbc",
+      "description": "Topic used for the PurchaseOrderStatus import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgh6000r0158fsqvev2n",
+      "name": "plex.odbc.import.purchaseOrderTypesFromPlexOdbc",
+      "description": "Topic used for the PurchaseOrderTypes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxghb000s0158hv3v105j",
+      "name": "plex.odbc.import.productStagesFromPlexOdbc",
+      "description": "Topic used for the ProductStages import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxghg000t01587ay5go52",
+      "name": "plex.odbc.import.productStrategiesFromPlexOdbc",
+      "description": "Topic used for the ProductStrategies import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxghl000u01584ntr79wg",
+      "name": "plex.odbc.import.productStrategyProcessBomFromPlexOdbcBom",
+      "description": "Topic used for the ProductStrategyProcessBom import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxghp000v0158h7hd5ior",
+      "name": "plex.odbc.import.productStrategyProcessTypeFromPlexOdbcPartOperationsType",
+      "description": "Topic used for the ProductStrategyProcessType import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgi2000w01588qfj0wk8",
+      "name": "plex.odbc.import.productTypesFromPlexOdbc",
+      "description": "Topic used for the ProductTypes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgi9000x0158d0qr156h",
+      "name": "plex.odbc.import.purchaseOrderLinesFromPlexOdbc",
+      "description": "Topic used for the PurchaseOrderLines import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgid000y01581cpuhfzy",
+      "name": "plex.odbc.import.purchaseOrderLineStatusesFromPlexOdbc",
+      "description": "Topic used for the PurchaseOrderLineStatuses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgij000z0158ezwshw47",
+      "name": "plex.odbc.import.qualityCodesFromPlexOdbcDefectType",
+      "description": "Topic used for the QualityCodes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgio00100158guykgccr",
+      "name": "plex.odbc.import.workcenterTypesFromPlexOdbc",
+      "description": "Topic used for the WorkcenterTypes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgiv001101580zxe87ha",
+      "name": "plex.odbc.import.adjustmentCodesFromPlexOdbc",
+      "description": "Topic used for the AdjustmentCodes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgj2001201587kstbu4a",
+      "name": "plex.odbc.import.customersFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Customers import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgj900130158bah81am4",
+      "name": "plex.odbc.import.facilitiesFromPlexOdbcBuildings.paginate",
+      "description": "Topic used for pagination in the Facilities import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgjd001401585eede19s",
+      "name": "plex.odbc.import.productsFromPlexOdbcParts.paginate",
+      "description": "Topic used for pagination in the Products import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgji00150158gerh17c9",
+      "name": "plex.odbc.import.productStrategyProcessesFromPlexOdbcPartOperations.paginate",
+      "description": "Topic used for pagination in the ProductStrategyProcesses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgjn00160158dilggsk4",
+      "name": "plex.odbc.import.productCustomDataFromPlexOdbcPartAttributes.paginate",
+      "description": "Topic used for pagination in the ProductCustomData import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgjv001701586wo8e6mk",
+      "name": "plex.odbc.import.suppliersFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Suppliers import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgk0001801589v480mhb",
+      "name": "plex.odbc.import.approvedLogisticalUnitsFromPlexOdbcPartOperationApprovedContainer.paginate",
+      "description": "Topic used for pagination in the ApprovedLogisticalUnits import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgk500190158h8yfhylp",
+      "name": "plex.odbc.import.contactsFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Contacts import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgk9001a01588mcad0wo",
+      "name": "plex.odbc.import.customerProductsFromPlexOdbcCustomerParts.paginate",
+      "description": "Topic used for pagination in the CustomerProducts import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgke001b0158evza9diy",
+      "name": "plex.odbc.import.locationsFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Locations import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgkj001c0158flsr7git",
+      "name": "plex.odbc.import.logisticalUnitsFromPlexOdbcContainerTypes.paginate",
+      "description": "Topic used for pagination in the LogisticalUnits import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgkr001d01581srpapat",
+      "name": "plex.odbc.import.workcentersFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Workcenters import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgkw001e0158fdyrapua",
+      "name": "plex.odbc.import.modesFromPlexOdbcWorkcenterStatuses.paginate",
+      "description": "Topic used for pagination in the Modes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgl0001f01587k1vga9f",
+      "name": "plex.odbc.import.scrapReasonsFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the ScrapReasons import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgl5001g015804icaedh",
+      "name": "plex.odbc.import.approvedSuppliersFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the ApprovedSuppliers import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgla001h01589nfugsrr",
+      "name": "plex.odbc.import.approvedWorkcentersFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the ApprovedWorkcenters import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxglg001i0158crow9iab",
+      "name": "plex.odbc.import.eventsFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Events import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgll001j0158dzyqh58i",
+      "name": "plex.odbc.import.supplierAddressesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the SupplierAddresses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxglp001k0158anszbmda",
+      "name": "plex.odbc.import.workcenterGroupFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the WorkcenterGroup import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxglt001l0158f8ti50dk",
+      "name": "plex.odbc.import.customerStageFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the CustomerStage import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxglx001m01582j7t1htb",
+      "name": "plex.odbc.import.locationStatusFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the LocationStatus import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgm1001n01582prp8eft",
+      "name": "plex.odbc.import.locationTypeFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the LocationType import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgm5001o01588tieblnu",
+      "name": "plex.odbc.import.customerAddressesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the CustomerAddresses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgmc001p0158hg9g2b0b",
+      "name": "plex.odbc.import.processesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the Processes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgmh001q0158e0r3asrq",
+      "name": "plex.odbc.import.purchaseOrdersFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the PurchaseOrders import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgml001r01583zu16o7k",
+      "name": "plex.odbc.import.purchaseOrderStatusFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the PurchaseOrderStatus import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgms001s0158814q7q9p",
+      "name": "plex.odbc.import.purchaseOrderTypesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the PurchaseOrderTypes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgmw001t0158acpxf47j",
+      "name": "plex.odbc.import.productStagesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the ProductStages import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgn0001u01585kjr6wfr",
+      "name": "plex.odbc.import.productStrategiesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the ProductStrategies import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgn4001v0158cu9s0ppd",
+      "name": "plex.odbc.import.productStrategyProcessBomFromPlexOdbcBom.paginate",
+      "description": "Topic used for pagination in the ProductStrategyProcessBom import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgn8001w01587vj1bmc8",
+      "name": "plex.odbc.import.productStrategyProcessTypeFromPlexOdbcPartOperationsType.paginate",
+      "description": "Topic used for pagination in the ProductStrategyProcessType import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgnb001x01586kvmdy9g",
+      "name": "plex.odbc.import.productTypesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the ProductTypes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgnh001y0158dvkbdcat",
+      "name": "plex.odbc.import.purchaseOrderLinesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the PurchaseOrderLines import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgnp001z0158hrjc45iv",
+      "name": "plex.odbc.import.purchaseOrderLineStatusesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the PurchaseOrderLineStatuses import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgnu00200158h4fn2ahx",
+      "name": "plex.odbc.import.qualityCodesFromPlexOdbcDefectType.paginate",
+      "description": "Topic used for pagination in the QualityCodes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgny00210158fktafzdl",
+      "name": "plex.odbc.import.workcenterTypesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the WorkcenterTypes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl7gkxgo200220158dew9aug5",
+      "name": "plex.odbc.import.adjustmentCodesFromPlexOdbc.paginate",
+      "description": "Topic used for pagination in the AdjustmentCodes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl835704y000w01707s4r0t1j",
+      "name": "plex.odbc.import.workcenterModesFromFuuzWorkcenterAndModes",
+      "description": "Topic used for the WorkcenterModes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl8357052000x01708jl4gas3",
+      "name": "plex.odbc.import.workcenterModesFromFuuzWorkcenterAndModes.paginate",
+      "description": "Topic used for pagination in the WorkcenterModes import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl8uo4qnt002y0188ge4ycp45",
+      "name": "plex.odbc.import.modeEventFromPlexOdbcWorkcenterEventStatus",
+      "description": "Topic used for the ModeEvent import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl8uo4qnw002z0188e1oi4zuf",
+      "name": "plex.odbc.import.modeEventFromPlexOdbcWorkcenterEventStatus.paginate",
+      "description": "Topic used for pagination in the ModeEvent import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl8xase1n003c018872zydoxa",
+      "name": "plex.odbc.import.inventoryStatusFromPlexOdbcContainerStatuses",
+      "description": "Topic used for the InventoryStatus import.",
+      "valueSchema": {}
+    },
+    {
+      "id": "cl8xase1o003d01880ifq8m33",
+      "name": "plex.odbc.import.inventoryStatusFromPlexOdbcContainerStatuses.paginate",
+      "description": "Topic used for pagination in the InventoryStatus import.",
+      "valueSchema": {}
+    }
+  ],
+  "description": "Insert Topic Data"
+}

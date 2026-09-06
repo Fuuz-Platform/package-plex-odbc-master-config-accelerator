@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plex ODBC Master Config Package &mdash; Fuuz Accelerator</title>
+<meta name="description" content="Fuuz accelerator: Plex ERP ODBC master configuration â€” 40+ numbered integration flows for master data sync">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://accelerators.fuuz.com/package-plex-odbc-master-config-accelerator/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://accelerators.fuuz.com/package-plex-odbc-master-config-accelerator/">
+<meta property="og:site_name" content="Fuuz Accelerators">
+<meta property="og:title" content="Plex ODBC Master Config Package &mdash; Fuuz Accelerator">
+<meta property="og:description" content="Fuuz accelerator: Plex ERP ODBC master configuration â€” 40+ numbered integration flows for master data sync">
+<link rel="icon" href="assets/appicon-violet.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="prose.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Plex ODBC Master Config Package",
+  "url": "https://accelerators.fuuz.com/package-plex-odbc-master-config-accelerator/",
+  "description": "Fuuz accelerator: Plex ERP ODBC master configuration \u00e2\u20ac\u201d 40+ numbered integration flows for master data sync",
+  "codeRepository": "https://github.com/Fuuz-Platform/package-plex-odbc-master-config-accelerator",
+  "applicationCategory": "BusinessApplication",
+  "runtimePlatform": "Fuuz",
+  "author": {
+    "@type": "Organization",
+    "name": "Fuuz",
+    "url": "https://fuuz.com"
+  }
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="../"><img src="assets/logo-horizontal-on-midnight.svg" alt="Fuuz"></a>
+    <span class="section">Accelerators</span>
+    <nav><a href="#overview">Overview</a><a href="#package-contents">Package Contents</a><a href="#registered-import-flows-40">Registered Import Flows (40+)</a><a href="https://github.com/Fuuz-Platform/package-plex-odbc-master-config-accelerator">GitHub</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap hero">
+  <p class="eyebrow">Accelerator &middot; Integration package</p>
+  <h1>Plex ODBC Master Config <span class="accent">Package</span></h1>
+  <p class="lede">Fuuz accelerator: Plex ERP ODBC master configuration â€” 40+ numbered integration flows for master data sync</p>
+  <div class="ctas">
+    <a class="cta cta-primary" href="https://github.com/Fuuz-Platform/package-plex-odbc-master-config-accelerator">Get the package</a>
+    <a class="cta cta-secondary" href="../">All accelerators</a>
+  </div>
+</div>
+<section>
+  <div class="wrap prose">
+<p><strong>Version:</strong> 1.0.1
+<strong>Platform:</strong> Fuuz (any)</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The Plex ODBC Master Data Configuration package installs the complete set of Fuuz master data import flows for Plex ERP customers using ODBC connectivity. It registers 40+ numbered integration flows — each responsible for importing a specific Plex data entity into Fuuz — as <code>MasterDataFlowConfiguration</code> records managed by the <code>package-master-data-flow-config-accelerator</code> orchestration layer.</p>
+<p>Plex ODBC flows extract data directly from Plex stored procedure endpoints (via ODBC connection) and upsert records into Fuuz data models covering the full manufacturing and logistics data model: facilities, locations, customers, suppliers, products, workcenters, modes, events, BOM structures, inventory, and more.</p>
+<p>This is an installer package (no interactive screens or custom models) — it creates flow configuration records and verifies uniqueness constraints before installing. It requires an active Plex ODBC <code>Connection</code> in the Fuuz platform.</p>
+<hr />
+<h2 id="package-contents">Package Contents</h2>
+<pre><code>plex-odbc-master-config/
+├── manifest.json
+├── package-data.json
+├── install/                     5 install steps
+└── preinstall/                  3 preinstall validation steps
+</code></pre>
+<hr />
+<h2 id="registered-import-flows-40">Registered Import Flows (40+)</h2>
+<p>Each flow is sequentially numbered in its description for ordered execution. The full set covers:</p>
+<h3>Site &amp; Location Hierarchy</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Flow Name</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Facilities from Plex ODBC Buildings</td>
+<td>Plex Buildings</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Location Type from Plex ODBC</td>
+<td>Plex Location Types</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Location Status from Plex ODBC</td>
+<td>Plex Location Statuses</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Locations from Plex ODBC</td>
+<td>Plex Locations</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Customer Stage from Plex ODBC</td>
+<td>Plex Customer Stages</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Customers &amp; Suppliers</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Flow Name</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06</td>
+<td>Customers from Plex ODBC</td>
+<td>Plex Customers</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Customer Addresses from Plex ODBC</td>
+<td>Plex Customer Addresses</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Contacts from Plex ODBC</td>
+<td>Plex Contacts (Supplier/Customer)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Approved Suppliers from Plex ODBC</td>
+<td>Plex Approved Suppliers</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Products &amp; BOM</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Flow Name</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>Product Stages from Plex ODBC</td>
+<td>Plex Product Stages</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Product Types from Plex ODBC</td>
+<td>Plex Product Types</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Products from Plex ODBC Parts</td>
+<td>Plex Parts</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Product Strategies from Plex ODBC</td>
+<td>Plex Product Strategies</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Processes from Plex ODBC</td>
+<td>Plex Processes</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Product Strategy Process Type from Plex ODBC</td>
+<td>Plex Part Operations Type</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Product Strategy Processes from Plex ODBC</td>
+<td>Plex Part Operations</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Customer Products from Plex ODBC</td>
+<td>Plex Customer Parts</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Product Strategy Process BOM from Plex ODBC</td>
+<td>Plex BOM</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Product Custom Data from Plex ODBC</td>
+<td>Plex Part Attributes</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Logistics &amp; Inventory</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Flow Name</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22</td>
+<td>Logistical Units from Plex ODBC Container Types</td>
+<td>Plex Container Types</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Approved Logistical Units from Plex ODBC</td>
+<td>Plex Part Operation Approved Container</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Adjustment Codes from Plex ODBC</td>
+<td>Plex Adjustment Codes</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Inventory Status from Plex ODBC</td>
+<td>Plex Container Statuses</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Production &amp; Workcenters</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Flow Name</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25</td>
+<td>Approved Workcenters from Plex ODBC</td>
+<td>Plex Approved Workcenters</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Events from Plex ODBC</td>
+<td>Plex Workcenter Events</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Modes from Plex ODBC</td>
+<td>Plex Workcenter Statuses</td>
+</tr>
+<tr>
+<td>29</td>
+<td>ModeEvent from Plex ODBC</td>
+<td>Plex Workcenter Event Statuses</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Additional flows (30–37, and others) cover shipment statuses, work orders, scheduling data, and supplementary reference tables.</em></p>
+<hr />
+<h2 id="install-process">Install Process</h2>
+<p><strong>Preinstall (3 steps):</strong> Validates uniqueness constraints for all flow IDs and names before installation begins. Throws an error if any flow already exists with a conflicting ID or name, preventing duplicate registration.</p>
+<p><strong>Install (5 steps):</strong>
+1. Creates all <code>MasterDataFlowConfiguration</code> header records (one per import flow) with the flow ID, name, description, and <code>Integration</code> type
+2. Registers each flow's connection configuration — links the configuration record to the Plex ODBC connection
+3. Sets initial schedule definitions for each flow (e.g., nightly, hourly)
+4. Sets <code>active</code> status based on recommended defaults (most flows active, some requiring manual activation)
+5. Deploys the flow definitions to the application as runnable integration flows</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Ensure <code>package-master-data-flow-config-accelerator</code> is installed first</li>
+<li>Ensure a Plex ODBC <code>Connection</code> is configured in Fuuz Connections settings and its connector is active</li>
+<li>Import this package via Fuuz Package Manager</li>
+<li>Review installed <code>MasterDataFlowConfiguration</code> records and adjust schedules as needed</li>
+<li>Enable desired flows by setting <code>active = true</code></li>
+<li>Trigger initial full sync by running all active flows manually from the Master Data Import dashboard</li>
+</ol>
+<hr />
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><strong>Fuuz Platform</strong> — any version</li>
+<li><strong><code>package-master-data-flow-config-accelerator</code></strong> — required; provides the <code>MasterDataFlowConfiguration</code> model and scheduling infrastructure</li>
+<li><strong>Plex ERP</strong> with ODBC access enabled</li>
+<li>A configured Plex ODBC <code>Connection</code> in the Fuuz platform</li>
+<li>Target data models must exist (provided by <code>application-mes-accelerator</code>, <code>application-wms-accelerator</code>, or <code>application-machine-monitoring-accelerator</code>)</li>
+</ul>
+<hr />
+<p><em>Built on the <a href="https://fuuz.com">Fuuz Industrial Operations Platform</a></em></p>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Fuuz&reg; is an Enterprise Industrial Intelligence Platform.
+      <a href="https://accelerators.fuuz.com/">All accelerators</a> &middot;
+      <a href="https://github.com/Fuuz-Platform/package-plex-odbc-master-config-accelerator">Source</a> &middot;
+      <a href="https://fuuz.com">fuuz.com</a></p>
+  </div>
+</footer>
+</body>
+</html>

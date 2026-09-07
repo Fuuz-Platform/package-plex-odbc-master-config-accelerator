@@ -117,3 +117,9 @@ Each flow is sequentially numbered in its description for ordered execution. The
 ---
 
 *Built on the [Fuuz Industrial Operations Platform](https://fuuz.com)*
+
+## Service levels
+
+No service level agreement applies to anything published here. It becomes a supported
+deliverable only once it has been implemented by a Fuuz services professional or an
+approved Fuuz partner.
